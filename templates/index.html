@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Stock Quote
+{% endblock %}
+
+{% block main %}
+
+    <table>
+        <thead>
+            <tr>
+                <td>Stocks </td>
+                <td>Quantity </td>
+                <td>Current price </td>
+                <td>Total Value</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in portfolio %}
+            <tr>
+                <td>{{ stock.symbol }} </td>
+                <td>{{ stock.shares }} </td>
+                <td>{{ stock.current_price }} </td>
+                <td>{{ stock.total_value }} </td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <th colspan = "3">Cash</th>
+                <th>${{ Cash }}</th>
+            </tr>
+            <tr>
+                <th colspan = "3">Grand total</th>
+                <th>${{ Grand_total }}</th>
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}
